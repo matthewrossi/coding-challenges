@@ -38,6 +38,16 @@ maximizing the score per ingredient.
 
 Swap random pizzas among random pairs of teams when it improves the score.
 
+## Data sets analysis
+
+Compute and visualize interesting information about the input data sets. Like:
+
+- number of pizzas available and the actual teams demand
+- pizzas distribution by number of ingredients
+- total number of ingredients and number of unique ingredients
+- number of pizzas containing each ingredient
+- ingredients distribution by number of pizzas containing them
+
 ## Scripts
 
 ### [script.sh](script.sh)

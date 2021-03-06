@@ -3,7 +3,7 @@
 *-large*
 
 # Do not upload hash-code input files
-hash-code/*/datasets
+hash-code/**/datasets
 
 # Do not upload reply input files
 reply/*/datasets

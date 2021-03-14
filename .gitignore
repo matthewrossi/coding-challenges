@@ -11,3 +11,6 @@ reply/*/datasets
 # Do not upload output files
 *.out
 output
+
+# Do not upload log files
+*.log

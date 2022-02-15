@@ -76,3 +76,8 @@ Compute and visualize interesting information about the input data sets. Like:
 - number of unique ingredients in likes and dislikes
 - #likes and #dislikes by ingredients
 - ingredients distribution by #likes and #dislikes
+
+## Score
+
+![practice-round-score-2022](https://user-images.githubusercontent.com/15113769/154091731-e53de77e-6846-4285-8ed0-ba8d4fd7da0b.png)
+

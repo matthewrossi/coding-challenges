@@ -1,4 +1,3 @@
-from curses import use_default_colors
 import sys
 
 from collections import defaultdict

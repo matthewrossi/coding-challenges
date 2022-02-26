@@ -51,10 +51,13 @@ def improve_project_contribs_skill(undergoing):
     for role_level, c in zip(project.roles_in_order, undergoing.contribs):
         role, level = role_level
         contrib = contribs[c]
-        contrib_level = contrib.skills[role]
+        contrib_level = 0 if role not in contrib.skills else contrib.skills[role]
         if level - 1 <= contrib_level <= level:
             # Increase contibutor level
-            contrib.skills[role] += 1
+            if not contrib_level:
+                contrib.skills[role] = 1
+            else:
+                contrib.skills[role] += 1
             # Update precomputed structure
             # TODO: remove level if it there are no more contribs
             skill_to_contribs[role][contrib_level].remove(c)
@@ -94,10 +97,16 @@ for p in range(nof_projects):
         roles_in_order.append((skill, level))
     projects[p] = Project(name, duration, score, soft_deadline, nof_roles, roles_in_order, roles)
 
+# Preprocess set of skills
+set_of_skills = {skill
+                 for contrib in contribs
+                 for skill in contrib.skills}
+
 # Preprocess skill -> level -> contributors
 skill_to_contribs = defaultdict(dict)
 for c, contrib in enumerate(contribs):
-    for skill, level in contrib.skills.items():
+    for skill in set_of_skills:
+        level = 0 if skill not in contrib.skills else contrib.skills[skill]
         current_contribs = skill_to_contribs[skill].get(level, set())
         current_contribs.add(c)
         skill_to_contribs[skill][level] = current_contribs
